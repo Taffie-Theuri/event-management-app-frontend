@@ -1,38 +1,40 @@
-.App {
+@font-face {
+  font-family: Misto;
+  src: url('fonts/Misto.woff2');
+}
+
+@font-face {
+  font-family: Butler;
+  src: url('fonts/Butler.woff2');
+}
+
+.app{
+  background-color: #FEF7EC;
+  height: 100rem;
+}
+html{
+  background-color: #FEF7EC ;
+  padding: 0 auto;
+  margin: 0px auto;
+}
+body{
+  font-family: Butler;
+  color: #f7c46d;
+}
+header{
   text-align: center;
+  background-color: #183E4E;
+  height: fit-content;
+  padding-top: .5rem;
+  padding-bottom: 3rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1{
+  font-size: 80px;
+  padding-bottom: 10px;
+  background-color: #183E4E;
+  font-family: Misto;
+  color: #f7c46d;
+  text-shadow: 2px 5px #8daa95;
+  letter-spacing: 10px;
 }
