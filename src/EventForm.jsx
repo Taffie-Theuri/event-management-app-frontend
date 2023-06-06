@@ -13,6 +13,7 @@ export default function EventForm({ addEvent }) {
 
     const [venue, setVenue] = useState('')
     let navigate = useNavigate();//hook that helps to go to the specific URL, forward or backward pages
+
 //function to set the date
     function handleDateChange(e){
         setDate(e.target.value)
@@ -61,11 +62,11 @@ export default function EventForm({ addEvent }) {
           .then(r => r.json())
           .then(data => setVenueData(data))
       }, [])
-
+//displaying a select box with options
       const venueOptions = venueData.map(({ id, venue_name }) =>
       <option  key={id} value={id}>{venue_name}</option>
       )
-
+//takes the selected venue
       function handleVenueSelect(e){
           setVenue(e.target.value)
       }
@@ -81,6 +82,7 @@ export default function EventForm({ addEvent }) {
     <h2>Add an Event</h2>
     <br/>
     <form onSubmit={handleSubmit} className="form">
+        
     <label className="input-label" htmlFor="venue-data">Venues: </label>
     <br/>
         <select id="venue-data" onChange={handleVenueSelect}>
@@ -88,6 +90,8 @@ export default function EventForm({ addEvent }) {
         </select>
         <br/>
         <br/>
+
+
         <label className="input-label" htmlFor="attendees">Attendees:</label>
         <input
         name="attendees"
@@ -99,6 +103,8 @@ export default function EventForm({ addEvent }) {
         ></input>
         <br/>
         <br/>
+
+
         <label className="input-label" htmlFor="event-type">Type of Event:</label>
         <input
         name="event-type"
@@ -110,6 +116,8 @@ export default function EventForm({ addEvent }) {
         ></input>
         <br/>
         <br/>
+
+
         <label className="input-label" htmlFor="price">Ticket Price:</label>
         <input
         name="price"
@@ -121,6 +129,8 @@ export default function EventForm({ addEvent }) {
         ></input>
         <br/>
         <br/>
+
+
         <label className="input-label" htmlFor="date">Date:</label>
         <input
         name="date"
@@ -132,6 +142,7 @@ export default function EventForm({ addEvent }) {
         ></input>
         <br/>
         <br/>
+
         <button className="form-input" type="submit">Create Event</button>
     </form>
 
