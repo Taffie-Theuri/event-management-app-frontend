@@ -9,8 +9,6 @@ export default function EventForm({ addEvent }) {
     const [price, setPrice] = useState("");
     const [attendees, setAttendees] = useState("");//Number of people attending
     const [eventType, setEventType] = useState("");
-
-
     const [venue, setVenue] = useState('')
     let navigate = useNavigate();//hook that helps to go to the specific URL, forward or backward pages
 
@@ -42,7 +40,7 @@ export default function EventForm({ addEvent }) {
             venue_id: venue,
             user_id: 5,
         }
-              fetch("http://localhost:9292/add-event",{
+              fetch("http://localhost:9292/events",{
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newEventObj)
