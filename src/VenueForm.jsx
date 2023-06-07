@@ -36,7 +36,7 @@ function handleCapacityChange(e) {
       capacity: capacity
     }
 
-    fetch("http://localhost:9292/add-venue",{
+    fetch("http://localhost:9292/venues",{
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newVenueObj)
@@ -111,7 +111,7 @@ function handleCapacityChange(e) {
         </input>
         <br/>
         <br/>
-        
+
         <button className="form-input" type="submit">Create Venue</button>
         </form>
     </>
