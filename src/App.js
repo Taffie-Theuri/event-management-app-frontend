@@ -1,24 +1,61 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import EventContainer from './EventContainer';
+import React, { useState, useEffect } from 'react';
+import Header from './Header';
+import EventForm from './EventForm';
+import VenueForm from './VenueForm';
+import Stats from './Stats';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+      fetch('http://localhost:9292/')
+      .then(r => r.json())
+      .then(data => setData(data))
+    }, [])
+
+  function handleDeleteEvent(eventToDelete){
+    const updatedEvents = data.filter((event) => {
+      if (event.id !== eventToDelete.id) {
+        return event
+      } else {
+        return null
+      }
+    });
+    setData(updatedEvents);
+  }
+
+  function handleUpdateEvent(updatedEventObj) {
+    const editedEvents = data.map((event) => {
+      if (event.id === updatedEventObj.id) {
+        return updatedEventObj;
+      } else {
+        return event;
+      }
+    });
+    setData(editedEvents);
+  }
+
+   return (
+    <>
+    <div className="app">
+    <Header/>
+      <Routes>
+            <Route exact path='/my-events' element={
+            <EventContainer
+            data={data}
+            handleDeleteEvent={handleDeleteEvent}
+            handleUpdateEvent={handleUpdateEvent}
+            />} />
+            <Route exact path='/create-event' element={<EventForm />} />
+            <Route exact path='/create-venue' element={<VenueForm />} />
+            <Route exact path='/stats' element={<Stats/>} />
+      </Routes>
     </div>
+    </>
   );
 }
 
