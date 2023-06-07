@@ -18,4 +18,8 @@ export default function NavBar() {
       </NavLink>
     </div>
   );
+
 }
+
+
+
