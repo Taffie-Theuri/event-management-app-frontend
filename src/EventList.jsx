@@ -4,15 +4,15 @@ import Search from './Search';
 
 function EventList({data, handleDeleteEvent, handleUpdateEvent}) {
   const [dataIndex, setDataIndex] = useState(0)
-
-
   const [searchTerm, setSearchTerm] = useState("")
 
 
 //TBD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+  console.log(data)
+
   const eventList = [...data]
   .filter((data) => {
-    return data.artist.name.toLowerCase().includes(searchTerm.toLowerCase());
+    return data.artist.toLowerCase().includes(searchTerm.toLowerCase());
   })
     .slice(dataIndex, dataIndex + 8)
 

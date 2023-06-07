@@ -12,7 +12,7 @@ function App() {
   const [data, setData] = useState([])
 
   useEffect(() => {
-      fetch('http://localhost:9292/')
+      fetch('http://localhost:9292/events')
       .then(r => r.json())
       .then(data => setData(data))
     }, [])
@@ -45,11 +45,7 @@ function App() {
     <Header/>
       <Routes>
             <Route exact path='/my-events' element={
-            <EventContainer
-            data={data}
-            handleDeleteEvent={handleDeleteEvent}
-            handleUpdateEvent={handleUpdateEvent}
-            />} />
+            <EventContainer data={data} handleDeleteEvent={handleDeleteEvent} handleUpdateEvent={handleUpdateEvent}/>} />
             <Route exact path='/create-event' element={<EventForm />} />
             <Route exact path='/create-venue' element={<VenueForm />} />
             <Route exact path='/stats' element={<Stats/>} />
