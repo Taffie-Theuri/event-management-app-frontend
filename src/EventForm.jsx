@@ -7,7 +7,7 @@ export default function EventForm({ addEvent }) {
     const [date, setDate] = useState("");
     const [venueData, setVenueData] = useState([]);
     const [price, setPrice] = useState("");
-    const [attendees, setAttendees] = useState("");//NUmber of people attending
+    const [attendees, setAttendees] = useState("");//Number of people attending
     const [eventType, setEventType] = useState("");
 
 
@@ -82,7 +82,7 @@ export default function EventForm({ addEvent }) {
     <h2>Add an Event</h2>
     <br/>
     <form onSubmit={handleSubmit} className="form">
-        
+
     <label className="input-label" htmlFor="venue-data">Venues: </label>
     <br/>
         <select id="venue-data" onChange={handleVenueSelect}>
