@@ -9,11 +9,7 @@ function EventContainer({data, handleDeleteEvent, handleUpdateEvent}) {
     <br/>
     <h2>My Events</h2>
     <br/>
-        <EventList
-        data={data}
-        handleDeleteEvent={handleDeleteEvent}
-        handleUpdateEvent={handleUpdateEvent}
-        />
+        <EventList data={data} handleDeleteEvent={handleDeleteEvent} handleUpdateEvent={handleUpdateEvent} />
     </>
     )
 }

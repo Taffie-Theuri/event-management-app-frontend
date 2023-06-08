@@ -60,6 +60,19 @@ h3{
   letter-spacing: 3px;
   text-shadow: 2px 2px #ffeac7;
 }
+
+h4{
+  margin: 10px;
+  font-family: Butler;
+  font-size: 28px;
+  text-align: center;
+  justify-content: center;
+  color: #ed6c66;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px #112831;;
+}
+
 h5{
   margin: 10px;
   font-family: Butler;

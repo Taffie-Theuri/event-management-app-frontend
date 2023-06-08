@@ -12,7 +12,7 @@ function EventList({data, handleDeleteEvent, handleUpdateEvent}) {
 
   const eventList = [...data]
   .filter((data) => {
-    return data.artist.toLowerCase().includes(searchTerm.toLowerCase());
+    return data.artist_name.toLowerCase().includes(searchTerm.toLowerCase());
   })
     .slice(dataIndex, dataIndex + 8)
 
