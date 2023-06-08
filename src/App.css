@@ -245,11 +245,13 @@ button.form-input:hover{
   border: none;
   padding: 5px;
   color:#FEF7EC;
+  width: auto;
   font-size: 20px;
   align-content: center;
   text-shadow: 1px 2px #000000;
   border-radius: 5px;
   transition: .4s;
+  margin: 5px;
 }
 .save-button:hover{
   box-shadow: 0px 0px 6px #FEF7EC;

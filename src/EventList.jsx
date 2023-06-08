@@ -7,22 +7,22 @@ function EventList({data, handleDeleteEvent, handleUpdateEvent}) {
   const [searchTerm, setSearchTerm] = useState("")
 
 
-//TBD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
   console.log(data)
 
-  const eventList = [...data]
-  .filter((data) => {
-    return data.artist_name.toLowerCase().includes(searchTerm.toLowerCase());
+const eventList = data
+  .filter((event) => {
+    const artistName = event.artist_name ?? ""; 
+    return artistName.toLowerCase().includes(searchTerm.toLowerCase());
   })
-    .slice(dataIndex, dataIndex + 8)
-
-    .map((data) =>
+  .slice(dataIndex, dataIndex + 8)
+  .map((event) => (
     <EventCard
-        key={data.id}
-        data={data}
-        handleDeleteEvent={handleDeleteEvent}
-        handleUpdateEvent={handleUpdateEvent}
-    />)
+      key={event.id}
+      data={event}
+      handleDeleteEvent={handleDeleteEvent}
+      handleUpdateEvent={handleUpdateEvent}
+    />
+  ));
 
     function handleClickMore() {
       setDataIndex((dataIndex) => (dataIndex + 8) % data.length);
