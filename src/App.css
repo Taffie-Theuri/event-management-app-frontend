@@ -426,6 +426,51 @@ input.search-bar{
   margin-bottom: 40px;
 }
 
+@media only screen and (max-width: 1228px) {
+  
+  header{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    
+   }
+
+   #nav-bar-div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 auto;
+   
+   }
+
+   .event-list{
+    display: grid;
+    margin: 0 auto;
+    max-height: 105rem;
+    grid-template-columns: auto auto auto;
+    gap: 1% 1%;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    min-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stats{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+
 
 @media only screen and (max-width: 1080px) {
 
