@@ -4,9 +4,8 @@ import EditEvent from './EditEvent';
 function EventCard({data, handleDeleteEvent, handleUpdateEvent}) {
     const [isEditing, setIsEditing] = useState(false);
     const [visible, setVisible] = useState(true)
-    const {id, attendees, date, event_type, price, venue, artist} = data
-    const {venue_name, address, capacity, phone } = venue
-    const {name} = artist
+    const {id, name, date, price, event_type, attendees, artist_name, venue_name, venue_address, venue_capacity, venue_phone_number } = data
+   
 
     function handleDelete(){
       fetch(`http://localhost:9292/events/${id}`, {
@@ -16,9 +15,8 @@ function EventCard({data, handleDeleteEvent, handleUpdateEvent}) {
       .then((deletedEvent) => handleDeleteEvent(deletedEvent))
     }
 
-    const dateSplit = date.split('-')
     const options = { year: 'numeric', month: 'long', day: 'numeric' }
-    let dateItem = new Date(dateSplit).toLocaleDateString('en-US', options);
+    let dateItem = new Date(date).toLocaleDateString('en-US', options);
 
   return (
     <div className="card">
@@ -46,6 +44,7 @@ function EventCard({data, handleDeleteEvent, handleUpdateEvent}) {
 
         </div>
           <h3>{name} {event_type}</h3>
+          <h4>{artist_name}</h4>
           <h5>{dateItem}</h5>
           <div className="price">🎟️ ${price}</div>
           <div className="attendees">Attendees: {attendees}</div>
@@ -57,9 +56,9 @@ function EventCard({data, handleDeleteEvent, handleUpdateEvent}) {
         <div className="venue-card">
           <h5 className="venue-info" onClick={() => setVisible(!visible)}>Concert Info</h5>
           <h5>{venue_name}</h5>
-          <p className="address">Address: {address}</p>
-          <p className="capacity">Capacity: {capacity}</p>
-          <p className='phone'>{phone}</p>
+          <p className="address">Address: {venue_address}</p>
+          <p className="capacity">Capacity: {venue_capacity}</p>
+          <p className='phone'>{venue_phone_number}</p>
         </div>
       )}
     </div>
