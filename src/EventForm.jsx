@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
-
 export default function EventForm({ addEvent }) {
   //Setting use states for the form
   const [name, setName] = useState("");
@@ -100,7 +99,7 @@ export default function EventForm({ addEvent }) {
       .then((data) => console.log(data))
       .then((data) => {
         console.log(data);
-        navigate("/my-events", { replace: true });
+        navigate("/", { replace: true });
       });
     
     setName("");
@@ -117,7 +116,7 @@ export default function EventForm({ addEvent }) {
       <h2>Add an Event</h2>
       <br />
       <form onSubmit={handleSubmit} className="form">
-        
+
         <label className="input-label" htmlFor="name">
           Name:
         </label>
