@@ -377,6 +377,8 @@ button.form-input:hover{
   box-shadow: 0px  4px  #112831;
   background-color:#98BEA2;
   text-shadow: 2px 2px 0px#FEF7EC;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 .next-button:hover{
 box-shadow: 0px  1px  #112831;
