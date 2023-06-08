@@ -143,14 +143,14 @@ select{
   font-size: 25px;
   font-weight: bold;
   font-family: Butler;
-  color:#FEF7EC;
-  text-shadow: 3px 1px #112831;
+  color:#050300;
+  /* text-shadow: 3px 1px #112831; */
 }
 
 .attendees{
-  font-size: 20px;
+  font-size: 22px;
   font-family: Butler;
-  text-shadow: 1px 1px #FEF7EC;
+  /* text-shadow: 1px 1px #FEF7EC; */
   color: #112831;
   margin: 15px;
 }
@@ -308,9 +308,9 @@ button.form-input:hover{
 .delete-edit-buttons{
   padding-bottom: 10px;
 }
-.delete-edit-buttons:hover{
+/* .delete-edit-buttons:hover{
   text-align: justify;
-}
+} */
 .address{
   font-family: Butler;
   font-size: 20px;
