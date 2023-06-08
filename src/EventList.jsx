@@ -25,7 +25,20 @@ const eventList = data
   ));
 
     function handleClickMore() {
-      setDataIndex((dataIndex) => (dataIndex + 8) % data.length);
+      if (data.length > (dataIndex+8)){
+      setDataIndex((dataIndex) => (dataIndex + 8));
+      console.log(dataIndex)}
+      else{
+
+      }
+    }
+
+    function handleClickBack() {
+      if (dataIndex>1){
+      setDataIndex((dataIndex) => (dataIndex - 8) % data.length);}
+      else{
+
+      }
     }
 
   return (
@@ -39,8 +52,10 @@ const eventList = data
     <br/>
     <br/>
     <div className="next-container">
+        <button className="next-button" onClick={handleClickBack}>Back</button>
         <button className="next-button" onClick={handleClickMore}>Next</button>
     </div>
+  
     </>
   )
 }
