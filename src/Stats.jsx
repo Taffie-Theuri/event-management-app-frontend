@@ -8,24 +8,21 @@ export default function Stats() {
     useEffect(() => {
         fetch('http://localhost:9292/artists_most_popular')
         .then(r => r.json())
-        .then(data => setPopular(data))
+        .then(data => setPopular(data.name))  
       }, [])
-    const name = popular.split('-')[0]
-    const fans = popular.split('-')[1]
-
+   
     useEffect(() => {
         fetch('http://localhost:9292/artists_highest_paid')
         .then(r => r.json())
-        .then(data => setScrilla(data))
+        .then(data => setScrilla(data.name))
       }, [])
-    const scrillaName = scrilla.split('-')[0]
-    const scrillaFans = scrilla.split('-')[1]
-
+   
     useEffect(() => {
         fetch('http://localhost:9292/artists_most_events')
         .then(r => r.json())
-        .then(data => setBusy(data))
+        .then(data => setBusy(data.name))
       }, [])
+      
 
 
   return (
@@ -33,14 +30,12 @@ export default function Stats() {
     <h2> Artist Stats </h2>
     <div className="stats">
         <h3>Most Popular:</h3>
-        <h5>{name}</h5>
-        <h5>{fans}</h5>
+        <h5>{popular}</h5>
     </div>
     <br/>
     <div className="stats">
         <h3>Highest paid:</h3>
-        <h5>{scrillaName}</h5>
-        <h5>{scrillaFans}</h5>
+        <h5>{scrilla}</h5>
     </div>
     <br/>
     <div className="stats">
