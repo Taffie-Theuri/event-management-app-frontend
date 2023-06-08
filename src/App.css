@@ -168,21 +168,23 @@ select{
 }
 
 .edit-btn{
-  display: hidden;
   width: 35px;
   height: 35px;
-  float: left;
+  float:left;
   border-radius: 50%;
   border: none;
-  color: transparent;
-  background-color: transparent;
-  transition: .3s;
-}
-.edit-btn:hover{
-  color:rgba(0, 0, 0, 0.644);
   background-color: #FEF7EC;
-  box-shadow: 0px 0px 3px #183E4E;
 }
+
+.delete-event-btn{
+  width: 35px;
+  height: 35px;
+  float: right;
+  border-radius: 50%;
+  border: none;
+  background-color: #FEF7EC;
+}
+
 
 .edit-event{
   align-items: center;
@@ -307,10 +309,34 @@ button.form-input:hover{
 }
 .delete-edit-buttons{
   padding-bottom: 10px;
+  display: hidden;
+  border: none;
+  color: transparent;
+  background-color: transparent;
+  transition: .3s;
 }
-/* .delete-edit-buttons:hover{
-  text-align: justify;
-} */
+.delete-edit-buttons > *{
+  padding-bottom: 10px;
+  display: hidden;
+  border: none;
+  color: transparent;
+  background-color: transparent;
+  transition: .3s;
+}
+
+.delete-edit-buttons:hover{
+  color:rgba(0, 0, 0, 0.644);
+  background-color: #0000002e;
+ 
+} 
+
+.delete-edit-buttons:hover > *{
+  color:rgba(0, 0, 0, 0.644);
+  background-color: #FEF7EC;
+  
+}
+
+
 .address{
   font-family: Butler;
   font-size: 20px;

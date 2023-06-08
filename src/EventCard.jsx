@@ -38,11 +38,11 @@ function EventCard({data, handleDeleteEvent, handleUpdateEvent}) {
                   onClick={() => setIsEditing((isEditing) => !isEditing)}
                 >
                   <span role="img" aria-label="edit">
-                    ✏️
+                  ✏️
                   </span>
                 </button>
                 <button onClick={handleDelete} className="delete-event-btn">
-                  X
+                <span role="img" aria-label="edit"> ❌</span>
                 </button>
                 <br />
                 <br />
