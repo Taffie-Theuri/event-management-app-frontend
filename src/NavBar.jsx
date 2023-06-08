@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <div>
+    <div id="nav-bar-div">
       <NavLink to="/" className="nav-button">
         My Events
       </NavLink>
