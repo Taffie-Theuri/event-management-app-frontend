@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function EventForm({ addEvent }) {
   //Setting use states for the form
+  const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [venue, setVenue] = useState("");
   const [venueData, setVenueData] = useState([]);
@@ -19,16 +20,16 @@ export default function EventForm({ addEvent }) {
     fetch(`http://localhost:9292/venues`)
       .then((r) => r.json())
       .then((data) => {
-        console.log(data);
         setVenueData(data);
       });
   }, []);
 
-  const venueOptions = venueData.map(({ id, venue_name }) => (
-    <option key={id} value={id}>
-      {venue_name}
-    </option>
-  ));
+ const venueOptions = venueData.map(({ id, name }) => (
+   <option key={id} value={id}>
+     {name}
+   </option>
+ ));
+
 
   function handleVenueSelect(e) {
     setVenue(e.target.value);
@@ -45,6 +46,10 @@ export default function EventForm({ addEvent }) {
       {name}
     </option>
   ));
+
+  function handleNameChange(e) {
+    setName(e.target.value);
+  }
 
   function handleArtistSelect(e) {
     setArtist(e.target.value);
@@ -70,14 +75,22 @@ export default function EventForm({ addEvent }) {
   //Event Form
   function handleSubmit(e) {
     e.preventDefault();
-    const newEventObj = {
-      attendees: attendees,
-      event_type: eventType,
-      price: price,
-      date: date,
-      venue_id: venue,
-      artist_id: artist,
-    };
+
+     if (!name) {
+       alert("Please enter an event name.");
+       return;
+     }
+
+      const newEventObj = {
+        name: name,
+        venue_id: venue,
+        date: date,
+        price: price,
+        event_type: eventType,
+        attendees: attendees,
+        artist_id: artist,
+      };
+
     fetch("http://localhost:9292/events", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -89,10 +102,13 @@ export default function EventForm({ addEvent }) {
         console.log(data);
         navigate("/my-events", { replace: true });
       });
+    
+    setName("");
     setAttendees("");
     setEventType("");
     setPrice("");
     setDate("");
+    
   }
 
   return (
@@ -101,12 +117,38 @@ export default function EventForm({ addEvent }) {
       <h2>Add an Event</h2>
       <br />
       <form onSubmit={handleSubmit} className="form">
+        
+        <label className="input-label" htmlFor="name">
+          Name:
+        </label>
+        <input
+          name="name"
+          type="text"
+          placeholder="Event name..."
+          value={name}
+          onChange={handleNameChange}
+          className="form-input"
+          required 
+        ></input>
+        <br />
+        <br />
+
         <label className="input-label" htmlFor="venue-data">
           Venues:{" "}
         </label>
         <br />
         <select id="venue-data" onChange={handleVenueSelect}>
           {venueOptions}
+        </select>
+        <br />
+        <br />
+
+        <label className="input-label" htmlFor="artist-data">
+          Artists:{" "}
+        </label>
+        <br />
+        <select id="artist-data" onChange={handleArtistSelect} value={artist}>
+          {artistOptions}
         </select>
         <br />
         <br />
@@ -122,16 +164,6 @@ export default function EventForm({ addEvent }) {
           onChange={handleAttendeesChange}
           className="form-input"
         ></input>
-        <br />
-        <br />
-
-        <label className="input-label" htmlFor="artist-data">
-          Artists:{" "}
-        </label>
-        <br />
-        <select id="artist-data" onChange={handleArtistSelect} value={artist}>
-          {artistOptions}
-        </select>
         <br />
         <br />
 
