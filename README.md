@@ -1,71 +1,67 @@
-# Getting Started with Create React App
+# Product Review System - Share Your Feedback
+This project is a Product Review System that allows users to share their feedback and reviews for various products. It aims to provide a platform where users can express their opinions and help others make informed decisions when purchasing products. Users can query the three tables users, products, and reviews for data from all the three tables using the already laid out relationships
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![ERD Diagram](./ERD.PNG)
 
-## Available Scripts
+## Built With:
+1. Ruby: Provides the base clases to map to.
+2. Active Record - Does the object relational mapping for the tables and classes
 
-In the project directory, you can run:
+## Geting Started /Setup
 
-### `npm start`
+1. Clone the repo
+```sh
+https://github.com/Soundmoney254/Product-review-Code-Challenge
+ ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ 2. Download the code files form the repository.
+ 3. Open the files on your code editor.
+ 4. Run "bundle install" inside the app's root directory to install gems and dependancies.
+ 5. Run the application on the terminal using ``` bundle exec rake console ```
+ 6. This will open a pry session inside the application and you can start quering for data using methods in the three models.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **User Management**
+  - Create a new user by providing their name and email.
+  - Retrieve the name and email of a user.
+  - Get a list of all user instances.
+   
+2. **Product Management**
+  - Create a new product by providing its name, description, and category.
+  - Modify the name, description, and category of a product after initialization.
+  - Retrieve the name, description, and category of a product.
+  - Get a list of all product instances.
+   
+3. **Review Management**
+  - Create a new review by providing a user object, a product object, star rating, and comment.
+  - Retrieve the star rating and comment of a given review.
+  - Get a list of all review instances.
+   
+4. **Object Relationship Methods**
+  - Retrieve the user associated with a given review.
+  - Retrieve the product associated with a given review.
+  - Retrieve all reviews given by a specific user.
+  - Retrieve all reviews for a particular product.
+  - Retrieve the average star rating for a product based on its reviews.
+   
+5. **Associations and Aggregate Methods**
+  - Add a new review associated with a user and a product.
+  - Retrieve the product with the highest star rating given by a user.
+  - Remove all reviews given by a user for a specific product.
+  - Retrieve a collection of all products reviewed by a user.
+  - Retrieve a collection of all users who have reviewed a product.
+ 
+## Limitations
+Limited User Interface: The project focuses on the backend logic and does not provide have a graphical user interface. It can currently only be used on the CLI.
 
-### `npm run build`
+## License and copyright
+The code in this project is licensed under the terms of the General Public License (GPL-3.0).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You are granted permission to use, modify, and contribute to the project under the conditions outlined in the GPL-3.0 license.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+It is important to preserve and include the copyright and license notices in all copies and distributions of the project.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# event-management-app-frontend
+## Author
+This project was created by Samuel Mbugua.
