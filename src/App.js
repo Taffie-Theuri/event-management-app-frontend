@@ -12,12 +12,12 @@ function App() {
   const [data, setData] = useState([])
 
   useEffect(() => {
-      fetch('http://localhost:9292/events')
+    fetch('http://localhost:9292/events')
       .then(r => r.json())
       .then(data => setData(data))
-    }, [])
+  }, [])
 
-  function handleDeleteEvent(eventToDelete){
+  function handleDeleteEvent(eventToDelete) {
     const updatedEvents = data.filter((event) => {
       if (event.id !== eventToDelete.id) {
         return event
@@ -39,19 +39,19 @@ function App() {
     setData(editedEvents);
   }
 
-   return (
+  return (
     <>
-    <div className="app">
-    <Header/>
-      <Routes>
-            <Route exact path='/my-events' element={
-            <EventContainer data={data} handleDeleteEvent={handleDeleteEvent} handleUpdateEvent={handleUpdateEvent}/>} />
-            <Route exact path='/create-event' element={<EventForm />} />
-            <Route exact path='/create-venue' element={<VenueForm />} />
-            <Route exact path='/stats' element={<Stats/>} />
-            
-      </Routes>
-    </div>
+      <div className="app">
+        <Header />
+        <Routes>
+          <Route exact path='/' element={
+            <EventContainer data={data} handleDeleteEvent={handleDeleteEvent} handleUpdateEvent={handleUpdateEvent} />} />
+          <Route exact path='/create-event' element={<EventForm />} />
+          <Route exact path='/create-venue' element={<VenueForm />} />
+          <Route exact path='/stats' element={<Stats />} />
+
+        </Routes>
+      </div>
     </>
   );
 }
