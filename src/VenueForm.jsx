@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 function VenueForm() {
 //useStates
   const [venue, setVenue] = useState("");
+  const [price, setPrice] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [capacity, setCapacity] = useState('');
@@ -12,6 +13,9 @@ function VenueForm() {
 
 function handleVenueChange(e) {
 setVenue(e.target.value)
+}
+function handlePriceChange(e) {
+  setPrice(e.target.value)
 }
 
 function handleAddressChange(e) {
@@ -30,9 +34,10 @@ function handleCapacityChange(e) {
     e.preventDefault();
 
     const newVenueObj = {
-      venue_name: venue,
+      name: venue,
+      price: price,
       address: address,
-      phone: phone,
+      phone_number: phone,
       capacity: capacity
     }
 
@@ -57,9 +62,9 @@ function handleCapacityChange(e) {
     <h2>Add a Venue</h2>
     <br/>
     <form onSubmit={handleSubmit} className="form">
-    <label className="input-label"  htmlFor="venue-name">Venue Name:</label>
+    <label className="input-label"  htmlFor="name">Venue Name:</label>
         <input
-        name="venue-name"
+        name="name"
         type="string"
         placeholder="Venue Name..."
         value={venue}
@@ -71,9 +76,23 @@ function handleCapacityChange(e) {
         <br/>
 
 
+        <label className="input-label"  htmlFor="price">Price:</label>
+        <input
+        name="price"
+        type="integer"
+        placeholder="Price..."
+        value={price}
+        onChange={handlePriceChange}
+        className="form-input"
+        >
+        </input>
+        <br/>
+        <br/>
+
+
         <label className="input-label"  htmlFor="address">Address:</label>
         <input
-        name="Address"
+        name="address"
         type="string"
         placeholder="Address..."
         value={address}
@@ -85,9 +104,9 @@ function handleCapacityChange(e) {
         <br/>
 
 
-        <label className="input-label"  htmlFor="phone">Phone:</label>
+        <label className="input-label"  htmlFor="phone_number">Phone:</label>
         <input
-        name="Phone"
+        name="phone_number"
         type="string"
         placeholder="Phone..."
         value={phone}
@@ -101,7 +120,7 @@ function handleCapacityChange(e) {
 
         <label className="input-label"  htmlFor="capacity">Capacity:</label>
         <input
-        name="Capacity"
+        name="capacity"
         type="number"
         placeholder="Capacity..."
         value={capacity}
