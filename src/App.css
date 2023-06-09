@@ -343,15 +343,15 @@ button.form-input:hover{
   font-family: Butler;
   font-size: 20px;
   color:#112831;
-  text-shadow: 1px 1px #f0f3f7;
+  /* text-shadow: 1px 1px #f0f3f7; */
 }
 
 .capacity{
   font-size: 20px;
-  text-shadow: 1px 1px 1px #112831;
+  color:#112831;
 }
 .phone{
-  color: #6AA6A4;
+  color: #000403;
   font-size: 20px;
   text-shadow: 1px 1px 1px #112831;
   background-color: #FEF7EC;
