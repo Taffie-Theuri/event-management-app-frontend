@@ -72,43 +72,47 @@ export default function EventForm({ addEvent }) {
   }
 
   //Event Form
-  function handleSubmit(e) {
-    e.preventDefault();
+ function handleSubmit(e) {
+   e.preventDefault();
 
-     if (!name) {
-       alert("Please enter an event name.");
-       return;
-     }
+   if (!name) {
+     alert("Please enter an event name.");
+     return;
+   }
 
-      const newEventObj = {
-        name: name,
-        venue_id: venue,
-        date: date,
-        price: price,
-        event_type: eventType,
-        attendees: attendees,
-        artist_id: artist,
-      };
+   const newEventObj = {
+     name: name,
+     venue_id: venue,
+     date: date,
+     price: price,
+     event_type: eventType,
+     attendees: attendees,
+     artist_id: artist,
+   };
 
-    fetch("http://localhost:9292/events", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newEventObj),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .then((data) => {
-        console.log(data);
-        navigate("/", { replace: true });
-      });
-    
-    setName("");
-    setAttendees("");
-    setEventType("");
-    setPrice("");
-    setDate("");
-    
-  }
+   fetch("http://localhost:9292/events", {
+     method: "POST",
+     headers: { "Content-Type": "application/json" },
+     body: JSON.stringify(newEventObj),
+   })
+     .then((response) => response.json())
+     .then((data) => {
+       console.log(data);
+         setTimeout(() => {
+           navigate("/", { replace: true });
+           window.location.reload();
+         }, 100);
+     })
+     .catch((error) => {
+       console.error("Error:", error);
+     });
+
+   setName("");
+   setAttendees("");
+   setEventType("");
+   setPrice("");
+   setDate("");
+ }
 
   return (
     <>
