@@ -49,7 +49,11 @@ function handleSubmit(e) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      setTimeout(() => navigate("/create-event", { replace: true }), 1000);
+      setTimeout(() => {
+        navigate("/create-event", { replace: true });
+        window.location.reload();
+      }, 100);
+
     });
 }
 
