@@ -26,8 +26,6 @@ Event managers in the music industry struggle to efficiently organize and manage
   -View artist with the most fans(determined by number of event attendees)
 
 
-## Limitations
-Limited User Interface: The project focuses on the backend logic and does not provide have a graphical user interface. It can currently only be used on the CLI.
 
 ## License and copyright
 The code in this project is licensed under the terms of the General Public License (GPL-3.0).
