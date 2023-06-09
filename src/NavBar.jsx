@@ -10,11 +10,11 @@ export default function NavBar() {
       <NavLink to="/stats" className="nav-button">
         Artist Stats
       </NavLink>
-      <NavLink to="/create-event" className="nav-button">
-        New Event
-      </NavLink>
       <NavLink to="/create-venue" className="nav-button">
         New Venue
+      </NavLink>
+      <NavLink to="/create-event" className="nav-button">
+        New Event
       </NavLink>
     </div>
   );

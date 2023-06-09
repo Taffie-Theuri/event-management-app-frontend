@@ -30,31 +30,28 @@ function handleCapacityChange(e) {
   setCapacity(e.target.value)
 }
 
-  function handleSubmit(e) {
-    e.preventDefault();
+function handleSubmit(e) {
+  e.preventDefault();
 
-    const newVenueObj = {
-      name: venue,
-      price: price,
-      address: address,
-      phone_number: phone,
-      capacity: capacity
-    }
+  const newVenueObj = {
+    name: venue,
+    price: price,
+    address: address,
+    phone_number: phone,
+    capacity: capacity,
+  };
 
-    fetch("http://localhost:9292/venues",{
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newVenueObj)
-      })
-      .then(response => response.json())
-      .then((data) => console.log(data))
-      .then(navigate("/create-event", { replace: true }))
-    //   setVenue('')
-    //   setAddress('')
-    //   setPhone('')
-    //   setCapacity('')
-  }
-
+  fetch("http://localhost:9292/venues", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(newVenueObj),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      setTimeout(() => navigate("/create-event", { replace: true }), 1000);
+    });
+}
 
   return (
     <>
@@ -70,6 +67,7 @@ function handleCapacityChange(e) {
         value={venue}
         onChange={handleVenueChange}
         className="form-input"
+        required
         >
         </input>
         <br/>
@@ -84,6 +82,7 @@ function handleCapacityChange(e) {
         value={price}
         onChange={handlePriceChange}
         className="form-input"
+        required
         >
         </input>
         <br/>
@@ -98,6 +97,7 @@ function handleCapacityChange(e) {
         value={address}
         onChange={handleAddressChange}
         className="form-input"
+        required
         >
         </input>
         <br/>
@@ -112,6 +112,7 @@ function handleCapacityChange(e) {
         value={phone}
         onChange={handlePhoneChange}
         className="form-input"
+        required
         >
         </input>
         <br/>
@@ -126,6 +127,7 @@ function handleCapacityChange(e) {
         value={capacity}
         onChange={handleCapacityChange}
         className="form-input"
+        required
         >
         </input>
         <br/>

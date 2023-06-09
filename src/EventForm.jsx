@@ -136,7 +136,7 @@ export default function EventForm({ addEvent }) {
           Venues:{" "}
         </label>
         <br />
-        <select id="venue-data" onChange={handleVenueSelect}>
+        <select id="venue-data" onChange={handleVenueSelect} required>
           {venueOptions}
         </select>
         <br />
@@ -146,7 +146,7 @@ export default function EventForm({ addEvent }) {
           Artists:{" "}
         </label>
         <br />
-        <select id="artist-data" onChange={handleArtistSelect} value={artist}>
+        <select id="artist-data" onChange={handleArtistSelect} value={artist} required>
           {artistOptions}
         </select>
         <br />
@@ -162,6 +162,7 @@ export default function EventForm({ addEvent }) {
           value={attendees}
           onChange={handleAttendeesChange}
           className="form-input"
+          required
         ></input>
         <br />
         <br />
@@ -176,6 +177,7 @@ export default function EventForm({ addEvent }) {
           value={eventType}
           onChange={handleEventTypeChange}
           className="form-input"
+          required
         ></input>
         <br />
         <br />
@@ -190,6 +192,7 @@ export default function EventForm({ addEvent }) {
           value={price}
           onChange={handlePriceChange}
           className="form-input"
+          required
         ></input>
         <br />
         <br />
@@ -204,6 +207,7 @@ export default function EventForm({ addEvent }) {
           value={date}
           onChange={handleDateChange}
           className="form-input"
+          required
         ></input>
         <br />
         <br />
