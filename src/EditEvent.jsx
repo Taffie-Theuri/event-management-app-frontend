@@ -23,26 +23,28 @@ export default function EditEvent({data, setIsEditing, handleUpdateEvent}) {
         setUpdatedDate(e.target.value)
     }
 
-
     function handleSubmit(e) {
-        e.preventDefault();
+      e.preventDefault();
 
-        fetch(`http://localhost:9292/events/${id}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            event_type: updatedEventType,
-            attendees: updatedAttendees,
-            price: updatedPrice,
-            date: updatedDate,
-          }),
-        })
-          .then((r) => r.json())
-          .then((updatedEvent) => handleUpdateEvent(updatedEvent))
-          .then(() => setIsEditing(false));
-      }
+      fetch(`http://localhost:9292/events/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          event_type: updatedEventType,
+          attendees: updatedAttendees,
+          price: updatedPrice,
+          date: updatedDate,
+        }),
+      })
+        .then((r) => r.json())
+        .then((updatedEvent) => handleUpdateEvent(updatedEvent))
+        .then(() => {
+          setIsEditing(false);
+          window.location.reload();
+        });
+    }
 
      function handleCancelClick() {
        setIsEditing(false);
