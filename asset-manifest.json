@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/event-management-app-frontend/static/css/main.d4b50a57.css",
+    "main.js": "/event-management-app-frontend/static/js/main.7bade6ae.js",
+    "static/media/Butler.woff2": "/event-management-app-frontend/static/media/Butler.99c7b1a6053c62da9427.woff2",
+    "static/media/Misto.woff": "/event-management-app-frontend/static/media/Misto.cd4146f459b9ee0da27b.woff",
+    "index.html": "/event-management-app-frontend/index.html",
+    "main.d4b50a57.css.map": "/event-management-app-frontend/static/css/main.d4b50a57.css.map",
+    "main.7bade6ae.js.map": "/event-management-app-frontend/static/js/main.7bade6ae.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d4b50a57.css",
+    "static/js/main.7bade6ae.js"
+  ]
+}
