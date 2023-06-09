@@ -5,10 +5,10 @@ import NavBar from './NavBar';
 export default function Header() {
   return (
     <>
-    <header>
-      <h1>event.ager</h1>
-      <NavBar />
-    </header>
+      <header>
+        <h1>EventVerse</h1>
+        <NavBar />
+      </header>
     </>
-  )
+  );
 }
